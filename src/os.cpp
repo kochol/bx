@@ -21,6 +21,7 @@
 #if BX_PLATFORM_WINDOWS || BX_PLATFORM_WINRT
 #	include <windows.h>
 #	include <psapi.h>
+#	pragma comment(lib, "psapi.lib")
 #elif  BX_PLATFORM_ANDROID    \
 	|| BX_PLATFORM_EMSCRIPTEN \
 	|| BX_PLATFORM_BSD        \
