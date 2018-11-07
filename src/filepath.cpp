@@ -401,8 +401,6 @@ namespace bx
 
 	bool make(const FilePath& _filePath, Error* _err)
 	{
-		BX_ERROR_SCOPE(_err);
-
 		if (!_err->isOk() )
 		{
 			return false;
@@ -430,8 +428,6 @@ namespace bx
 
 	bool makeAll(const FilePath& _filePath, Error* _err)
 	{
-		BX_ERROR_SCOPE(_err);
-
 		if (!_err->isOk() )
 		{
 			return false;
