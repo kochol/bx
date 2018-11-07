@@ -19,7 +19,7 @@
 
 #define BX_ERROR_SCOPE(_ptr) \
 			BX_ERROR_USE_TEMP_WHEN_NULL(_ptr); \
-			bx::ErrorScope bxErrorScope(const_cast<bx::Error*>(&tmpError) )
+			bx::ErrorScope bxErrorScope(_ptr)
 
 #define BX_ERROR_RESULT(_err, _code) \
 			BX_STATIC_ASSERT(_code != 0, "ErrorCode 0 is reserved!"); \
