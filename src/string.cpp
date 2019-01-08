@@ -898,7 +898,8 @@ namespace bx
 			char ch = '\0';
 
 			Error err;
-			read(&reader, ch, &err);
+			if (!read(&reader, ch, &err))
+				break;
 
 			if (!_err->isOk()
 			||  !err.isOk() )

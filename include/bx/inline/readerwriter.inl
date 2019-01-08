@@ -176,10 +176,6 @@ namespace bx
 		int32_t size = uint32_min(_size, uint32_t(min<int64_t>(remainder, INT32_MAX) ) );
 		memCopy(_data, &m_data[m_pos], size);
 		m_pos += size;
-		if (size != _size)
-		{
-			BX_ERROR_SET(_err, BX_ERROR_READERWRITER_READ, "MemoryReader: read truncated.");
-		}
 		return size;
 	}
 
@@ -249,10 +245,6 @@ namespace bx
 		memCopy(&m_data[m_pos], _data, size);
 		m_pos += size;
 		m_top = max(m_top, m_pos);
-		if (size != _size)
-		{
-			BX_ERROR_SET(_err, BX_ERROR_READERWRITER_WRITE, "MemoryWriter: write truncated.");
-		}
 		return size;
 	}
 
